@@ -35,3 +35,6 @@ Route::post('/fileup','HomeController@onFileUp');
 Route::get('/fileDownload/{Folderpath}/{name}','DownloadController@onDownload');
 
 Route::get('/fileList','DownloadController@onSelectFileList');
+
+
+Route::get('/filedelete','DeleteController@onDelete');
