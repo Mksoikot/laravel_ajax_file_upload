@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -16,8 +17,14 @@ class HomeController extends Controller
     //     return view('Home');
     // }
      function onFileUp(Request $req){
-     $result = $req->file('Filekey')->store('images');
-     return $result;
+     $path = $req->file('Filekey')->store('images');
+       $result= DB::table('myfile')->insert(['file_path'=>$path]);
+       if($result==true){
+           return 1;
+       }else{
+           return 0;
+       }
+
 
     }
 }

@@ -29,3 +29,9 @@ Route::post('/upload','UploadController@UploadFile')->name('Uploadfile');
 
 // Route::get('/','HomeController@uploadForm');
 Route::post('/fileup','HomeController@onFileUp');
+
+
+// DownloadController
+Route::get('/fileDownload/{Folderpath}/{name}','DownloadController@onDownload');
+
+Route::get('/fileList','DownloadController@onSelectFileList');

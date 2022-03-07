@@ -8,7 +8,7 @@
     <body>
             <div class="container">
                 <div class="row d-flex justify-content-center">
-                    <div class="col-md-6 mt-5">
+                    <div class="col-md-4 card text-center mt-4 p-3">
                         <div class="card text-center">
                             <div class="card-header">
                                 <h6>laravel Ajax File Upload</h6>
@@ -20,6 +20,20 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-1"> </div>
+                     <div class="col-md-4 card text-center mt-4 p-3">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td>No</td>
+                                    <td>Download</td>
+                                </tr>
+                            </thead>
+                            <tbody class="tableData">
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -28,6 +42,30 @@
 
         <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
         <script type="text/javascript">
+            getFileList();
+            function getFileList(){
+                axios.get('/fileList')
+                .then(function (response) {
+                   var JSONDATA= response.data;
+
+                   $.each(JSONDATA, function (i){
+                       $('<tr>').html(
+                        "<td>"+JSONDATA[i].id+"</td> " +
+                        "<td><a href='/fileDownload/"+JSONDATA[i].file_path+"'class='btn btn-success'>Download</button></td>"
+                        ).appendTo('.tableData');
+                   })
+
+                })
+                .catch(function (error) {
+
+                })
+
+
+            }
+
+
+
+
 
         function onUpload() {
 
