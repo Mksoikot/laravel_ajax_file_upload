@@ -21,9 +21,9 @@ Route::get('/', function () {
 // Route::post('/fileUp','UploadController@onFileUp');
 
 
-// Route::get('/upload','UploadController@Upload');
+Route::get('/upload','UploadController@Upload');
 
-// Route::post('/upload','UploadController@UploadFile')->name('Uploadfile');
+Route::post('/upload','UploadController@UploadFile')->name('Uploadfile');
 
 // HomeController
 

@@ -16,7 +16,8 @@ class HomeController extends Controller
     //     return view('Home');
     // }
      function onFileUp(Request $req){
-      $req->file('Filekey')->store('images');
+     $result = $req->file('Filekey')->store('images');
+     return $result;
 
     }
 }
