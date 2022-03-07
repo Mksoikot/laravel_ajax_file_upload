@@ -37,7 +37,7 @@
                 </div>
             </div>
 
-
+            <img src="{{asset('storage/hxezwb4GD6EEF1ucjg2VCCobhaLipyvMvkosAdWc.jpg')}}">
 
 
         <script type="text/javascript" src="{{asset('js/app.js')}}"></script>

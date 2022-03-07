@@ -17,7 +17,7 @@ class HomeController extends Controller
     //     return view('Home');
     // }
      function onFileUp(Request $req){
-     $path = $req->file('Filekey')->store('images');
+     $path = $req->file('Filekey')->store('public');
        $result= DB::table('myfile')->insert(['file_path'=>$path]);
        if($result==true){
            return 1;
